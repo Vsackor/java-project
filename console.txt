@@ -1,0 +1,442 @@
+Console Output
+Started by GitHub push by Vsackor
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] node
+Running on 79439ca595f8 in /workspace/java-pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] git
+Fetching changes from the remote Git repository
+Checking out Revision 12f40b47dcfb3b0220c4336ce3c2d8f766ba6eac (refs/remotes/origin/master)
+Commit message: "Update Jenkinsfile"
+[Pipeline] sh
++ ant -buildfile test.xml
+Buildfile: /workspace/java-pipeline/test.xml
+
+clean:
+   [delete] Deleting directory /workspace/java-pipeline/bin
+   [delete] Deleting directory /workspace/java-pipeline/reports
+
+makedir:
+    [mkdir] Created dir: /workspace/java-pipeline/bin
+    [mkdir] Created dir: /workspace/java-pipeline/reports
+
+compile:
+    [javac] /workspace/java-pipeline/test.xml:25: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 3 source files to /workspace/java-pipeline/bin
+ > git rev-parse --is-inside-work-tree # timeout=10
+ > git config remote.origin.url https://github.com/Vsackor/java-project.git # timeout=10
+Fetching upstream changes from https://github.com/Vsackor/java-project.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/Vsackor/java-project.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 12f40b47dcfb3b0220c4336ce3c2d8f766ba6eac
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 12f40b47dcfb3b0220c4336ce3c2d8f766ba6eac
+ > git rev-list --no-walk 2e9825237ded1426b4995c8d039b5b9cee62a1ba # timeout=10
+
+test:
+    [junit] Running RectangleTest
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec
+
+main:
+
+BUILD SUCCESSFUL
+Total time: 1 second
+[Pipeline] sh
++ ant -f test.xml -v
+Apache Ant(TM) version 1.10.1 compiled on February 2 2017
+Buildfile: /workspace/java-pipeline/test.xml
+Detected Java version: 1.8 in: /usr/lib/jvm/java-1.8-openjdk/jre
+Detected OS: Linux
+parsing buildfile /workspace/java-pipeline/test.xml with URI = file:/workspace/java-pipeline/test.xml
+Project base dir set to: /workspace/java-pipeline
+parsing buildfile jar:file:/usr/share/java/apache-ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/usr/share/java/apache-ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+Build sequence for target(s) `main' is [clean, makedir, compile, test, main]
+Complete build sequence is [clean, makedir, compile, test, main, ]
+
+clean:
+   [delete] Deleting directory /workspace/java-pipeline/bin
+   [delete] Deleting /workspace/java-pipeline/bin/Rectangulator.class
+   [delete] Deleting /workspace/java-pipeline/bin/Rectangle.class
+   [delete] Deleting /workspace/java-pipeline/bin/RectangleTest.class
+   [delete] Deleting directory /workspace/java-pipeline/bin
+   [delete] Deleting directory /workspace/java-pipeline/reports
+   [delete] Deleting /workspace/java-pipeline/reports/result.xml
+   [delete] Deleting directory /workspace/java-pipeline/reports
+
+makedir:
+    [mkdir] Created dir: /workspace/java-pipeline/bin
+    [mkdir] Created dir: /workspace/java-pipeline/reports
+
+compile:
+    [javac] /workspace/java-pipeline/test.xml:25: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Rectangle.java added as Rectangle.class doesn't exist.
+    [javac] RectangleTest.java added as RectangleTest.class doesn't exist.
+    [javac] Rectangulator.java added as Rectangulator.class doesn't exist.
+    [javac] Compiling 3 source files to /workspace/java-pipeline/bin
+    [javac] Using modern compiler
+dropping /workspace/java-pipeline/usr/share/java/apache-ant/lib/junit.jar from path as it doesn't exist
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] '/workspace/java-pipeline/bin'
+    [javac] '-classpath'
+    [javac] '/workspace/java-pipeline/bin:/workspace/java-pipeline/lib/junit-4.10.jar:/usr/share/java/apache-ant/lib/ant-launcher.jar:/usr/share/java/apache-ant/lib/ant-jai.jar:/usr/share/java/apache-ant/lib/ant-jmf.jar:/usr/share/java/apache-ant/lib/ant.jar:/usr/share/java/apache-ant/lib/ant-swing.jar:/usr/share/java/apache-ant/lib/ant-apache-log4j.jar:/usr/share/java/apache-ant/lib/ant-jsch.jar:/usr/share/java/apache-ant/lib/ant-javamail.jar:/usr/share/java/apache-ant/lib/ant-antlr.jar:/usr/share/java/apache-ant/lib/ant-junit.jar:/usr/share/java/apache-ant/lib/ant-apache-regexp.jar:/usr/share/java/apache-ant/lib/ant-jdepend.jar:/usr/share/java/apache-ant/lib/ant-commons-net.jar:/usr/share/java/apache-ant/lib/ant-apache-bsf.jar:/usr/share/java/apache-ant/lib/ant-commons-logging.jar:/usr/share/java/apache-ant/lib/ant-testutil.jar:/usr/share/java/apache-ant/lib/ant-xz.jar:/usr/share/java/apache-ant/lib/ant-apache-resolver.jar:/usr/share/java/apache-ant/lib/ant-apache-oro.jar:/usr/share/java/apache-ant/lib/ant-junit4.jar:/usr/share/java/apache-ant/lib/ant-apache-bcel.jar:/usr/share/java/apache-ant/lib/ant-netrexx.jar:/usr/share/java/apache-ant/lib/ant-apache-xalan2.jar:/usr/lib/jvm/java-1.8-openjdk/lib/tools.jar'
+    [javac] '-sourcepath'
+    [javac] '/workspace/java-pipeline/src'
+    [javac] '-g:none'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] Files to be compiled:
+    [javac]     /workspace/java-pipeline/src/Rectangle.java
+    [javac]     /workspace/java-pipeline/src/RectangleTest.java
+    [javac]     /workspace/java-pipeline/src/Rectangulator.java
+
+test:
+    [junit] Implicitly adding /usr/share/java/apache-ant/lib/ant-launcher.jar:/usr/share/java/apache-ant/lib/ant.jar:/usr/share/java/apache-ant/lib/ant-junit.jar:/usr/share/java/apache-ant/lib/ant-junit4.jar to CLASSPATH
+    [junit] Executing '/usr/lib/jvm/java-1.8-openjdk/jre/bin/java' with arguments:
+    [junit] '-classpath'
+    [junit] '/workspace/java-pipeline/lib/junit-4.10.jar:/workspace/java-pipeline/bin:/usr/share/java/apache-ant/lib/ant-launcher.jar:/usr/share/java/apache-ant/lib/ant.jar:/usr/share/java/apache-ant/lib/ant-junit.jar:/usr/share/java/apache-ant/lib/ant-junit4.jar'
+    [junit] 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner'
+    [junit] 'RectangleTest'
+    [junit] 'skipNonTests=false'
+    [junit] 'filtertrace=true'
+    [junit] 'haltOnError=false'
+    [junit] 'haltOnFailure=false'
+    [junit] 'formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter'
+    [junit] 'showoutput=false'
+    [junit] 'outputtoformatters=true'
+    [junit] 'logfailedtests=true'
+    [junit] 'threadid=0'
+    [junit] 'logtestlistenerevents=false'
+    [junit] 'formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/workspace/java-pipeline/reports/result.xml'
+    [junit] 'crashfile=/workspace/java-pipeline/junitvmwatcher1812980676376626119.properties'
+    [junit] 'propsfile=/workspace/java-pipeline/junit651709849110258000.properties'
+    [junit] 
+    [junit] The ' characters around the executable and arguments are
+    [junit] not part of the command.
+    [junit] Running RectangleTest
+    [junit] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec
+    [junit] Starting test thread 0
+    [junit] Ending test thread 0
+
+main:
+
+BUILD SUCCESSFUL
+Total time: 1 second
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ ant -f build.xml -v
+Apache Ant(TM) version 1.10.1 compiled on February 2 2017
+Buildfile: /workspace/java-pipeline/build.xml
+Detected Java version: 1.8 in: /usr/lib/jvm/java-1.8-openjdk/jre
+Detected OS: Linux
+parsing buildfile /workspace/java-pipeline/build.xml with URI = file:/workspace/java-pipeline/build.xml
+Project base dir set to: /workspace/java-pipeline
+parsing buildfile jar:file:/usr/share/java/apache-ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/usr/share/java/apache-ant/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
+ [property] Loading Environment env.
+Build sequence for target(s) `main' is [clean, makedir, compile, jar, main]
+Complete build sequence is [clean, makedir, compile, jar, main, ]
+
+clean:
+   [delete] Deleting directory /workspace/java-pipeline/bin
+   [delete] Deleting /workspace/java-pipeline/bin/Rectangulator.class
+   [delete] Deleting /workspace/java-pipeline/bin/Rectangle.class
+   [delete] Deleting /workspace/java-pipeline/bin/RectangleTest.class
+   [delete] Deleting directory /workspace/java-pipeline/bin
+   [delete] Deleting directory /workspace/java-pipeline/dist
+   [delete] Deleting /workspace/java-pipeline/dist/rectangle-55.jar
+   [delete] Deleting directory /workspace/java-pipeline/dist
+
+makedir:
+    [mkdir] Created dir: /workspace/java-pipeline/bin
+    [mkdir] Created dir: /workspace/java-pipeline/dist
+
+compile:
+    [javac] /workspace/java-pipeline/build.xml:30: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Rectangle.java added as Rectangle.class doesn't exist.
+    [javac] RectangleTest.java added as RectangleTest.class doesn't exist.
+    [javac] Rectangulator.java added as Rectangulator.class doesn't exist.
+    [javac] Compiling 3 source files to /workspace/java-pipeline/bin
+    [javac] Using modern compiler
+dropping /workspace/java-pipeline/usr/share/java/apache-ant/lib/junit.jar from path as it doesn't exist
+    [javac] Compilation arguments:
+    [javac] '-d'
+    [javac] '/workspace/java-pipeline/bin'
+    [javac] '-classpath'
+    [javac] '/workspace/java-pipeline/bin:/workspace/java-pipeline/lib/junit-4.10.jar:/usr/share/java/apache-ant/lib/ant-launcher.jar:/usr/share/java/apache-ant/lib/ant-jai.jar:/usr/share/java/apache-ant/lib/ant-jmf.jar:/usr/share/java/apache-ant/lib/ant.jar:/usr/share/java/apache-ant/lib/ant-swing.jar:/usr/share/java/apache-ant/lib/ant-apache-log4j.jar:/usr/share/java/apache-ant/lib/ant-jsch.jar:/usr/share/java/apache-ant/lib/ant-javamail.jar:/usr/share/java/apache-ant/lib/ant-antlr.jar:/usr/share/java/apache-ant/lib/ant-junit.jar:/usr/share/java/apache-ant/lib/ant-apache-regexp.jar:/usr/share/java/apache-ant/lib/ant-jdepend.jar:/usr/share/java/apache-ant/lib/ant-commons-net.jar:/usr/share/java/apache-ant/lib/ant-apache-bsf.jar:/usr/share/java/apache-ant/lib/ant-commons-logging.jar:/usr/share/java/apache-ant/lib/ant-testutil.jar:/usr/share/java/apache-ant/lib/ant-xz.jar:/usr/share/java/apache-ant/lib/ant-apache-resolver.jar:/usr/share/java/apache-ant/lib/ant-apache-oro.jar:/usr/share/java/apache-ant/lib/ant-junit4.jar:/usr/share/java/apache-ant/lib/ant-apache-bcel.jar:/usr/share/java/apache-ant/lib/ant-netrexx.jar:/usr/share/java/apache-ant/lib/ant-apache-xalan2.jar:/usr/lib/jvm/java-1.8-openjdk/lib/tools.jar'
+    [javac] '-sourcepath'
+    [javac] '/workspace/java-pipeline/src'
+    [javac] '-g:none'
+    [javac] 
+    [javac] The ' characters around the executable and arguments are
+    [javac] not part of the command.
+    [javac] Files to be compiled:
+    [javac]     /workspace/java-pipeline/src/Rectangle.java
+    [javac]     /workspace/java-pipeline/src/RectangleTest.java
+    [javac]     /workspace/java-pipeline/src/Rectangulator.java
+
+jar:
+      [jar] Building jar: /workspace/java-pipeline/dist/rectangle-56.jar
+      [jar] adding directory META-INF/
+      [jar] adding entry META-INF/MANIFEST.MF
+      [jar] adding entry Rectangle.class
+      [jar] adding entry RectangleTest.class
+      [jar] adding entry Rectangulator.class
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+      [jar] Location: /workspace/java-pipeline/build.xml:37: 
+
+main:
+
+BUILD SUCCESSFUL
+Total time: 0 seconds
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] git
+Fetching changes from the remote Git repository
+Checking out Revision 12f40b47dcfb3b0220c4336ce3c2d8f766ba6eac (refs/remotes/origin/master)
+Commit message: "Update Jenkinsfile"
+[Pipeline] sh
++ cat README.md
+# java-project
+Update to see jenkins build automatically 
+Using Github webhook
+Getting work done
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Reports)
+[Pipeline] withCredentials
+[Pipeline] {
+[Pipeline] sh
++ aws cloudformation describe-stack-resources --region us-east-1 --stack-name Jenkins
+ > git rev-parse --is-inside-work-tree # timeout=10
+ > git config remote.origin.url https://github.com/Vsackor/java-project.git # timeout=10
+Fetching upstream changes from https://github.com/Vsackor/java-project.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials Github token
+ > git fetch --tags --progress https://github.com/Vsackor/java-project.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 12f40b47dcfb3b0220c4336ce3c2d8f766ba6eac
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 12f40b47dcfb3b0220c4336ce3c2d8f766ba6eac
+{
+    "StackResources": [
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::IAM::Policy", 
+            "Timestamp": "2019-05-02T19:00:16.706Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenki-ECAc-1AUKDVW980M3Y", 
+            "LogicalResourceId": "ECAccessPolicy"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::InternetGateway", 
+            "Timestamp": "2019-05-02T19:00:06.067Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "igw-0799c2cfa303c671a", 
+            "LogicalResourceId": "InternetGateway"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::IAM::Role", 
+            "Timestamp": "2019-05-02T19:00:03.942Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenkins-JenkinsAccessRole-6C4T467R34X4", 
+            "LogicalResourceId": "JenkinsAccessRole"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::IAM::InstanceProfile", 
+            "Timestamp": "2019-05-02T19:02:10.330Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenkins-JenkinsInstanceProfile-XLNHBPTQ6RV2", 
+            "LogicalResourceId": "JenkinsInstanceProfile"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::SecurityGroupIngress", 
+            "Timestamp": "2019-05-02T19:00:27.399Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "JenkinsSGIngressTCP50000", 
+            "LogicalResourceId": "JenkinsSGIngressTCP50000"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::SecurityGroup", 
+            "Timestamp": "2019-05-02T19:00:18.999Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "sg-024f76e7aa747a479", 
+            "LogicalResourceId": "JenkinsSecurityGroup"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::Instance", 
+            "Timestamp": "2019-05-02T19:05:33.012Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "i-0f1bc1132cc06a774", 
+            "LogicalResourceId": "JenkinsServer"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::AutoScaling::AutoScalingGroup", 
+            "Timestamp": "2019-05-02T19:07:01.429Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenkins-JenkinsSlaveGroup-1QMJ6D4NEIHAM", 
+            "LogicalResourceId": "JenkinsSlaveGroup"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::AutoScaling::LaunchConfiguration", 
+            "Timestamp": "2019-05-02T19:05:38.858Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenkins-JenkinsSlaveLaunchConf-5YEAFMW3KIO7", 
+            "LogicalResourceId": "JenkinsSlaveLaunchConf"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::VPC", 
+            "Timestamp": "2019-05-02T19:00:07.887Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "vpc-0e4ac6806a6480dfc", 
+            "LogicalResourceId": "JenkinsVpc"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::Subnet", 
+            "Timestamp": "2019-05-02T19:00:28.322Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "subnet-0cbf2aedd46f9283e", 
+            "LogicalResourceId": "PublicSubnet1"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::Route", 
+            "Timestamp": "2019-05-02T19:00:33.078Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenki-Publi-1KM8VX5AOU7D3", 
+            "LogicalResourceId": "PublicSubnet1Route"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::SubnetRouteTableAssociation", 
+            "Timestamp": "2019-05-02T19:00:48.585Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "rtbassoc-0ba296cd81ef89ab2", 
+            "LogicalResourceId": "PublicSubnet1RouteAssociation"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::RouteTable", 
+            "Timestamp": "2019-05-02T19:00:12.760Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "rtb-07b6221d124bbaf93", 
+            "LogicalResourceId": "PublicSubnet1RouteTable"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::IAM::Policy", 
+            "Timestamp": "2019-05-02T19:00:15.438Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenki-S3Po-103JN4HNCR6WK", 
+            "LogicalResourceId": "S3Policy"
+        }, 
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:519100886279:stack/Jenkins/72577480-6d0c-11e9-b499-0aab6c3cae14", 
+            "ResourceStatus": "CREATE_COMPLETE", 
+            "DriftInformation": {
+                "StackResourceDriftStatus": "NOT_CHECKED"
+            }, 
+            "ResourceType": "AWS::EC2::VPCGatewayAttachment", 
+            "Timestamp": "2019-05-02T19:00:28.059Z", 
+            "StackName": "Jenkins", 
+            "PhysicalResourceId": "Jenki-VPCGa-ST0YM56LPJ25", 
+            "LogicalResourceId": "VPCGatewayAttachment"
+        }
+    ]
+}
+[Pipeline] junit
+Recording test results
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
